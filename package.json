@@ -1,0 +1,20 @@
+{
+  "name": "turing-wsp",
+  "version": "1.0.0",
+  "description": "Red neural entrenada para responder mensajes con un lenguaje similar al usuario",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Jarosky1904/Turing-Wsp.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Jarosky1904/Turing-Wsp/issues"
+  },
+  "homepage": "https://github.com/Jarosky1904/Turing-Wsp#readme"
+}
