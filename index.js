@@ -1,6 +1,6 @@
-const { Client, LocalAuth } = requiere('whatsapp-web.js');
+const { Client, LocalAuth } = require('whatsapp-web.js');
 const qrcode = require('qrcode-terminal');
-const fs = requiere('fs');
+const fs = require('fs');
 
 // Inicializar el cliente de Whatsapp
 const client = new Client({
