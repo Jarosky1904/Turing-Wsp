@@ -19,6 +19,6 @@
   "homepage": "https://github.com/Jarosky1904/Turing-Wsp#readme",
   "dependencies": {
     "qrcode-terminal": "^0.12.0",
-    "whatsapp-web.js": "^1.26.0"
+    "whatsapp-web.js": "^1.27.0"
   }
 }
