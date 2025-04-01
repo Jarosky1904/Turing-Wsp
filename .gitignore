@@ -3,5 +3,4 @@ node_modules/
 .wwebjs_auth/
 .wwebjs_cache/
 chats_historicos.json
-chats_filtrados.json
-chats_normalizados.json
+pares_entrenamiento.json
