@@ -14,17 +14,28 @@ client.on('qr', qr => {
 });
 
 // Confirmar conexion
-client.on('ready', () => {
+client.on('ready', async () => {
     console.log('Cliente conectado con exito');
-});
 
-// Escuchar mensajes y guardarlos en un archivo
-client.on('message', async msg => {
-    console.log(`[${msg.from}] ${msg.body}`);
+    // Obtener los chats disponibles
+    const chats = await client.getChats();
+    console.log(`Chats encontrados ${chats.length} chats.`);
 
-    // Guardar mensaje en archivo JSON
-    const data = { from: msg.from, message:msg.body, timestamp: msg.timestamp };
-    fs.appendFileSync('chats.json', JSON.stringify(data) + '\n');
+    // Elegir el chat de entrenamiento
+    const chat = chats[0]; // Cambia el valor si quieres otro chat;
+
+    // Obtener mensajes del chat
+    const mensajes = await chat.fetchMessages({ limit: 200 }); // Obtener los ultimos 200 mensajes
+
+    // Guardar los mensajes en un archivo JSON
+    const data = mensajes.map(msg => ({
+        form: msg.from,
+        message: msg.body,
+        timestamp: msg.timestamp
+    }));
+
+    fs.writeFileSync('chats_historicos.json', JSON.stringify(data, null, 4), 'utf-8');
+    console.log("Historial de chat guardado en chats_historicos.json");
 });
 
 // Iniciar cliente
