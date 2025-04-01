@@ -22,7 +22,7 @@ client.on('ready', async () => {
     console.log(`Chats encontrados ${chats.length} chats.`);
 
     // Elegir el chat de entrenamiento
-    const chat = chats[0]; // Cambia el valor si quieres otro chat;
+    const chat = chats[4]; // Cambia el valor si quieres otro chat;
 
     // Obtener mensajes del chat
     const mensajes = await chat.fetchMessages({ limit: 200 }); // Obtener los ultimos 200 mensajes
