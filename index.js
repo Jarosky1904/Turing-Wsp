@@ -29,7 +29,7 @@ client.on('ready', async () => {
 
     // Guardar los mensajes en un archivo JSON
     const data = mensajes.map(msg => ({
-        form: msg.from,
+        from: msg.from,
         message: msg.body,
         timestamp: msg.timestamp
     }));
