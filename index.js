@@ -102,9 +102,18 @@ client.on('ready', async () => {
     }
 
     // Guardar historial
-    const nombreArchivo = "./data/chats_historicos.json";
-    fs.writeFileSync(nombreArchivo, JSON.stringify(data, null, 4), 'utf-8');
-    console.log(`\nHistorial guardado en ${nombreArchivo}`);
+    const rutaCarpeta = "./data";
+    const nombreArchivo = "historial_chat.json";
+    const rutaCompleta = `${rutaCarpeta}/${nombreArchivo}`;
+
+    // Crear carpeta si no existe
+    if (!fs.existsSync(rutaCarpeta)) {
+        fs.mkdirSync(rutaCarpeta);
+    }
+
+    // Guardar archivo
+    fs.writeFileSync(rutaCompleta, JSON.stringify(data, null, 4), 'utf-8');
+    console.log(`\nHistorial guardado en ${rutaCompleta}`);
 
     // Cerrar sesion
     client.destroy();
