@@ -4,3 +4,4 @@ node_modules/
 .wwebjs_cache/
 chats_historicos.json
 pares_entrenamiento.json
+ideas.txt
