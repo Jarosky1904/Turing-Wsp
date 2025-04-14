@@ -3,6 +3,13 @@ const qrcode = require('qrcode-terminal');
 const fs = require('fs');
 const readline = require('readline-sync');
 const { timeStamp } = require('console');
+const path = require('path');
+const rutaCarpeta = "./data";
+
+// Crear carpeta si no existe
+if (!fs.existsSync(rutaCarpeta)) {
+    fs.mkdirSync(rutaCarpeta);
+}
 
 // Inicializar el cliente de Whatsapp
 const client = new Client({
@@ -56,6 +63,17 @@ client.on('ready', async () => {
             timestamp: msg.timestamp
         }));
 
+        // Guardar config.json
+        const configData = {
+            usuario: miNombre
+        };
+    
+        fs.writeFileSync(
+            path.join(rutaCarpeta, 'config.json'),
+            JSON.stringify(configData, null, 4),
+            'utf-8'
+        );
+
     } else {
         // Si es grupo
         console.log("\n Este es un grupo. Detectando participantes...");
@@ -102,14 +120,8 @@ client.on('ready', async () => {
     }
 
     // Guardar historial
-    const rutaCarpeta = "./data";
     const nombreArchivo = "historial_chat.json";
     const rutaCompleta = `${rutaCarpeta}/${nombreArchivo}`;
-
-    // Crear carpeta si no existe
-    if (!fs.existsSync(rutaCarpeta)) {
-        fs.mkdirSync(rutaCarpeta);
-    }
 
     // Guardar archivo
     fs.writeFileSync(rutaCompleta, JSON.stringify(data, null, 4), 'utf-8');
