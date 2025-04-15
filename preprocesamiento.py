@@ -49,7 +49,7 @@ def agrupar_por_emisor(mensajes):
     
     bloques.append({
         "from": actual,
-        "messages": ", ".join(contenido)
+        "message": ", ".join(contenido)
     })
 
     return bloques
