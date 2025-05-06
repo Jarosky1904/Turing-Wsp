@@ -1,2 +1,6 @@
 venv/
 node_modules/
+.wwebjs_auth/
+.wwebjs_cache/
+data/
+privado/
