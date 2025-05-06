@@ -64,11 +64,11 @@ model.compile(optimizer='adam', loss='sparse_categorical_crossentropy')
 # Entrenar
 model.fit([encoder_input_seq, decoder_input_seq], decoder_target_seq,
           batch_size=32,
-          epochs=1,
+          epochs=300,
           validation_split=0.2)
 
 # Guardar el modelo completo
-model.save('privado/modelo_chatbot.h5')
+model.save('privado/modelo_chatbot.keras')
 
 # Guardar tokenizer
 with open('privado/tokenizer.json', 'w', encoding='utf-8') as f:
