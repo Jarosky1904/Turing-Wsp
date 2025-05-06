@@ -65,7 +65,8 @@ client.on('ready', async () => {
 
         // Guardar config.json
         const configData = {
-            usuario: miNombre
+            usuario: miNombre,
+            usuario2: nombreOtro
         };
     
         fs.writeFileSync(
