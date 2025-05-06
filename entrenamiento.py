@@ -64,7 +64,7 @@ model.compile(optimizer='adam', loss='sparse_categorical_crossentropy')
 # Entrenar
 model.fit([encoder_input_seq, decoder_input_seq], decoder_target_seq,
           batch_size=32,
-          epochs=50,
+          epochs=1,
           validation_split=0.2)
 
 # Guardar el modelo completo
@@ -94,5 +94,13 @@ decoder_model = Model(
     [decoder_outputs_inf, state_h_inf, state_c_inf]
 )
 decoder_model.save('privado/decoder_model.keras')
+
+config = {
+    "max_len_input": max_len_input,
+    "max_len_output": max_len_output
+}
+
+with open("privado/model_config.json", "w", encoding="utf-8") as f:
+    json.dump(config, f, indent=4)
 
 print("Modelo, tokenizer, encoder y decoder guardados correctamente")
