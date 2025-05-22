@@ -1,6 +1,2 @@
 venv/
-node_modules/
-.wwebjs_auth/
-.wwebjs_cache/
-data/
-privado/
+pyme-assist-firebase-adminsdk-fbsvc-327fdf85e6.json
