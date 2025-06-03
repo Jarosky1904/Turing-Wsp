@@ -1,0 +1,24 @@
+{
+  "name": "assist-pyme",
+  "version": "1.0.0",
+  "description": "Red neural entrenada para responder mensajes con un lenguaje similar al usuario",
+  "main": "bot.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Jarosky1904/Assist-Pyme.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Jarosky1904/Assist-Pyme/issues"
+  },
+  "homepage": "https://github.com/Jarosky1904/Assist-Pyme#readme",
+  "dependencies": {
+    "qrcode-terminal": "^0.12.0",
+    "whatsapp-web.js": "^1.28.0"
+  }
+}
